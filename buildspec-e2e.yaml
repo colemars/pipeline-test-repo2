@@ -15,3 +15,7 @@ phases:
   #   commands:
   #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
   # base-directory: 'build'
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
