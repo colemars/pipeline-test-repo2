@@ -1,6 +1,5 @@
 version: 0.2
 
-#env:
 phases:
   pre_build:
     commands:
@@ -14,8 +13,13 @@ phases:
   # post_build:
   #   commands:
   #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
-  # base-directory: 'build'
 artifacts:
   files:
-    - 'build/*'
-    - 'buildspec*'
+    - '**/*'
+  base-directory: build
+  secondary-artifacts:
+    TestFiles:
+      files:
+        - '**/*'
+      name: TestFilesArtifact
+      base-directory: e2e
