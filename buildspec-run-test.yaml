@@ -7,11 +7,15 @@ phases:
       - yarn config set script-shell /bin/bash
       - yarn config set cache-folder /root/.yarn-cache
       - yarn #install --frozen-lockfile
+      - npx playwright install
   build:
     on-failure: ABORT
     commands:
-      - yarn build-e2e
-  # post_build:
-  #   commands:
-  #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
-  # base-directory: 'build'
+      - yarn e2e
+  post_build:
+    commands:
+      - npx nyc report --reporter=html
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'coverage'
