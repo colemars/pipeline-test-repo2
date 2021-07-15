@@ -1,0 +1,18 @@
+version: 0.2
+
+#env:
+phases:
+  pre_build:
+    commands:
+      - yarn config set script-shell /bin/bash
+      - yarn config set cache-folder /root/.yarn-cache
+      - yarn #install --frozen-lockfile
+      - npx playwright install
+  build:
+    on-failure: ABORT
+    commands:
+      - yarn test
+  # post_build:
+  #   commands:
+  #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
+  # base-directory: 'build'

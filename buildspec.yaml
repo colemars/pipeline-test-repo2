@@ -1,0 +1,20 @@
+version: 0.2
+
+#env:
+phases:
+  pre_build:
+    commands:
+      - yarn config set script-shell /bin/bash
+      - yarn config set cache-folder /root/.yarn-cache
+      - yarn #install --frozen-lockfile
+  build:
+    on-failure: ABORT
+    commands:
+      - yarn build
+  # post_build:
+  #   commands:
+  #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
