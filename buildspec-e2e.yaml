@@ -22,4 +22,3 @@ artifacts:
       files:
         - '**/*'
       name: TestFilesArtifact
-      base-directory: e2e
