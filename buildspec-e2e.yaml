@@ -15,11 +15,11 @@ phases:
   #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
 artifacts:
   secondary-artifacts:
-    TestFiles:
+    TestFilesArtifact:
       files:
         - '**/*'
       name: TestFilesArtifact
-    Build:
+    TestBuildArtifact:
       files:
         - '**/*'
       name: TestBuildArtifact
