@@ -9,6 +9,7 @@ phases:
       # - yarn config set cache-folder /root/.yarn-cache
       # - yarn #install --frozen-lockfile
       - ls -a
+      - ls node-modules/
       - which npm
       - which node
       - echo $NODE_PATH
