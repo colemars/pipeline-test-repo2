@@ -17,6 +17,7 @@ phases:
       - yarn e2e
   post_build:
     commands:
+      - ls .nyc_output
       - npx nyc report --reporter=html
 artifacts:
   files:
