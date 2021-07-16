@@ -25,4 +25,4 @@ artifacts:
         - '**/*'
       name: TestBuildArtifact
       base-directory: build
-    enable-symlinks: true
+      enable-symlinks: true
