@@ -10,10 +10,6 @@ phases:
       - yarn #install --frozen-lockfile
       - ls -a
       - find ./node_modules/.bin  -maxdepth 1 -type l -ls
-      # - ls node_modules/@playwright/test/lib/cli
-      - which npm
-      - which node
-      - echo $NODE_PATH
       - npx playwright install
   build:
     on-failure: ABORT

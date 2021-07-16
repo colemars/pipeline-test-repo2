@@ -10,13 +10,11 @@ phases:
     on-failure: ABORT
     commands:
       - yarn build-e2e
-  # post_build:
-  #   commands:
-  #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
 artifacts:
   enable-symlinks: true
   secondary-artifacts:
     TestFilesArtifact:
+      enable-symlinks: true
       files:
         - '**/*'
       name: TestFilesArtifact
