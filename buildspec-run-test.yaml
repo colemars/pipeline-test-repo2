@@ -7,11 +7,11 @@ phases:
       - yarn config set script-shell /bin/bash
       - yarn config set cache-folder /root/.yarn-cache
       - yarn #install --frozen-lockfile
+      - ls -a
       - npx playwright install
   build:
     on-failure: ABORT
     commands:
-      - ls -a
       - yarn e2e
   post_build:
     commands:
