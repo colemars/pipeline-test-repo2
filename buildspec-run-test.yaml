@@ -9,7 +9,7 @@ phases:
       # - yarn config set cache-folder /root/.yarn-cache
       - yarn #install --frozen-lockfile
       - ls -a
-      - ls node_modules/.bin
+      - ls node-modules/@playwright/test/lib/cli
       - which npm
       - which node
       - echo $NODE_PATH
