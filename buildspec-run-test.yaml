@@ -4,6 +4,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - rm -rf node-modules
       - yarn config set script-shell /bin/bash
       - yarn config set cache-folder /root/.yarn-cache
       - yarn #install --frozen-lockfile
