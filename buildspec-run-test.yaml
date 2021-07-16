@@ -6,8 +6,8 @@ phases:
     commands:
       - rm -rf node-modules
       - yarn config set script-shell /bin/bash
-      - yarn config set cache-folder /root/.yarn-cache
-      - yarn #install --frozen-lockfile
+      # - yarn config set cache-folder /root/.yarn-cache
+      # - yarn #install --frozen-lockfile
       - ls -a
       - which npm
       - which node
