@@ -8,6 +8,9 @@ phases:
       - yarn config set cache-folder /root/.yarn-cache
       - yarn #install --frozen-lockfile
       - ls -a
+      - which npm
+      - which node
+      - echo $NODE_PATH
       - npx playwright install
   build:
     on-failure: ABORT

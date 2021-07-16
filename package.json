@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "build-e2e": "USE_BABEL_PLUGIN_ISTANBUL=true react-app-rewired build ",
+    "build-e2e": "USE_BABEL_PLUGIN_ISTANBUL=true react-app-rewired build",
     "e2e": "npx playwright test",
     "eject": "react-scripts eject"
   },
