@@ -14,6 +14,7 @@ phases:
   #   commands:
   #     - aws cloudfront create-invalidation --distribution-id=$DISTROBUTIONID --paths '/*'
 artifacts:
+  enable-symlinks: true
   secondary-artifacts:
     TestFilesArtifact:
       files:
@@ -24,3 +25,4 @@ artifacts:
         - '**/*'
       name: TestBuildArtifact
       base-directory: build
+    enable-symlinks: true
