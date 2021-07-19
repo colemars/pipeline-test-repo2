@@ -1,6 +1,5 @@
 import { test } from './baseFixtures';
 import { testUrl } from './constants';
-import { apple } from './nested1/apple';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(testUrl)
