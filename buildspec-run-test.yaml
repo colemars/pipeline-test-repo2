@@ -19,6 +19,7 @@ phases:
     commands:
       - ls .nyc_output
       - npx nyc report --reporter=html
+      - cp -r .nyc_output/ coverage/
 artifacts:
   files:
     - '**/*'
