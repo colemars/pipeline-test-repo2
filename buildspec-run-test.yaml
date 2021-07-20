@@ -6,6 +6,7 @@ phases:
     commands:
       - yarn config set script-shell /bin/bash
       - yarn config set cache-folder /root/.yarn-cache
+      - npx playwright install
   build:
     on-failure: ABORT
     commands:
