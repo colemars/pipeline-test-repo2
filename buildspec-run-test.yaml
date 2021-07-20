@@ -4,23 +4,16 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - rm -rf node-modules
       - yarn config set script-shell /bin/bash
-      # - yarn config set cache-folder /root/.yarn-cache
-      - yarn #install --frozen-lockfile
-      - ls -a
-      - find ./node_modules/.bin  -maxdepth 1 -type l -ls
-      - npx playwright install
+      - yarn config set cache-folder /root/.yarn-cache
   build:
     on-failure: ABORT
     commands:
       - yarn e2e
   post_build:
     commands:
-      - ls .nyc_output
       - npx nyc report --reporter=html
       - npx nyc report --reporter=text-summary
-      - cp -r .nyc_output/ coverage/
 artifacts:
   files:
     - '**/*'
